@@ -1,3 +1,6 @@
+#include "stdio.h"
+#include "stdlist.h"
+
 typedef struct
 {
 	MaillonLARC* List
