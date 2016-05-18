@@ -18,7 +18,7 @@ typedef struct
 	char ligne;   //Ligne sur laquelle est le sommet
 	char nom;   //Nom du sommet
 	double pds;   //Poids du sommet
-	LARC* PremArc;  //Premier arc partant de ce sommet
+	LARC PremArc;  //Premier arc partant de ce sommet
 	unsigned int deg=0;   //Degré du sommet (0 par défault)
 } SOMMET
 
@@ -28,7 +28,7 @@ typedef struct
 	ARC* arcs;
 	unsigned int nX;   //Nombre de sommet
 	unsigned int nA;   // Nombre d'arcs
-} *GRAPHE
+} GRAPHE
 
 graphe nouveau_graphe(unsigned int nX,unsigned int nA)
 {
