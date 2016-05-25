@@ -1,24 +1,35 @@
 #include "stdio.h"
-#include "stdlist.h"
+#include "stdlib.h"
 
 
 typedef struct 
 {
-	SOMMET* dep;  //Adresse du sommet de départ dans le tableau des sommets
-	SOMMET* arr;  //Adresse "    "    d'arrivée "     "    "     "     "
+	unsigned int dep;  //Adresse du sommet de départ dans le tableau des sommets
+	unsigned int arr;  //Adresse "    "    d'arrivée "     "    "     "     "
 	double pds;  // Poids de l'arc
 } ARC;
+
+typedef struct MaillonLARC MaillonLARC;
+
+typedef MaillonLARC* LARC;
+
+struct MaillonLARC
+{
+	ARC arc;
+	MaillonLARC* suivant;
+};
+
 
 typedef struct 
 {
 	unsigned int ind; //valeur du sommet
-	unsigned double X;	//Latitude du sommet
-	unsigned double Y;  //Longitude du sommet
+	double X;	//Latitude du sommet
+	double Y;  //Longitude du sommet
 	char ligne;   //Ligne sur laquelle est le sommet
 	char nom;   //Nom du sommet
 	double pds;   //Poids du sommet
-	LARC* PremArc;  //Premier arc partant de ce sommet
-	unsigned int deg=0;   //Degré du sommet (0 par défault)
+	LARC PremArc;  //Premier arc partant de ce sommet
+	unsigned int deg;   //Degré du sommet (0 par défault)
 } SOMMET;
 
 typedef struct 
