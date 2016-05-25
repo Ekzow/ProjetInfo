@@ -12,6 +12,18 @@ double lecture_poids(SOMMET* S){
 	
 ARC* fetch_arc(SOMMET*Dep, SOMMET*Arr){ //fonction qui retourne l'adresse de l'arc entre les sommets Dep et Arr, et qui renvoie un erreur si il n'existe pas un unique arc qui les relie
 	int i=0;
-	if (!est_vide(Dep->PremArc)){
-		while	// test existence de l'arc suivant
+	if (!est_vide(Dep->PremArc)){ //cul de sac ?
+		while(renvoi_arc(Def->PremArc,i)!=Arr){
+			i++;
+		}	// test existence de l'arc suivant
+		return(renvoi_arc(Def->PremArc,i))
+}
+
+LARC bellman(GRAPHE G,SOMMET Dep,SOMMET Arr){
+	int Nx=G.nX
+	over_9000(G)
+	Dep.pds=0
+	for(i=0,i<Nx,i++){
+		
+	}
 }
