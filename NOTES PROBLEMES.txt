@@ -1,0 +1,27 @@
+Problemes de progra :
+
+TOUTE LES FONCTIONS : Le do/while faisait planter a chaques fois, j'ai changé pour toutes.
+
+pop_tete : Au début je bossais pas en pointeur, au lieu de me supprimer le maillon ca me 
+vidais juste.
+
+
+Renvoie arc : Le parcours itératif déconnais
+
+Test égalité : J'ai du la créer parce que le == finctionais pas avec les arcs
+
+Recherche arc : Dans cette fonction j'ai bricolé avec test égalité pour que ca marche.
+
+supprimer arc : ici j'ai du copier le parcours itératif de afficher_larc, j'avais écris
+littéralement la meme chose mais ca marchait pas
+
+Supprimer indice : j'ai du pas mal bricoler, au début je pouvais pas supprimer la queue de
+liste. Je pensais que c'était un probleme d'indice de fin de boucle for, mais ca changais
+rien quans je le changeais.
+
+J'ai testé avec un 5 maillons, ca marchait, j'ai retesté avec 4, et cette fois ca marchais
+alors que j'avais rien changé ... WTF Oo
+
+Afficher_larc : au début ca tournais dans le vide a cause d'un do/while.
+
+Le reste ca marche juste pas de base <3
