@@ -1,17 +1,17 @@
 #include "Bellman.h"
 
-GRAPHE set_pds(GRAPHE g)
+GRAPHE set_pds(GRAPHE g) //Sert a initialiser les poids
 {
 	int i;
 	
-	for (i=0;i<(g->nX);i++)
+	for (i=0;i<(g->nX);i++) //Parcours itératf des sommets
 	{
 		g->Graphe[i].pds=1000000000;
 	}
 	return g;
 }
 
-LARC Bellman(GRAPHE g, int dep, int arr, LARC chemin)
+LARC Bellman(GRAPHE g, int dep, int arr, LARC chemin) //Fonction qui réalise l'algorithme non optimisé
 {
 	int i,j,k;
 	ARC a;
@@ -19,19 +19,19 @@ LARC Bellman(GRAPHE g, int dep, int arr, LARC chemin)
 	b.pds=0.0;
 	
 	g=set_pds(g);
-	g->Graphe[dep].pds=0;
+	g->Graphe[dep].pds=0; //initialisation des poids
 	
 	for(i=0;i<(g->nX);i++)//Boucle de l'algo
 	{
-		for(j=0;j<(g->nX);i++)
+		for(j=0;j<(g->nX);i++) //Pour tout les sommets
 		{
-			for (k=0;k<taille_larc(g->Graphe[j].PremArc);k++)
+			for (k=0;k<taille_larc(g->Graphe[j].PremArc);k++) //Pour chaque arc du sommet
 			{
-				a=renvoi_arc(g->Graphe[j].PremArc,k);
-				if((g->Graphe[a.dep].pds)+a.pds<(g->Graphe[a.arr].pds))
+				a=renvoi_arc(g->Graphe[j].PremArc,k); //On sort l'arc au bon indice
+				if((g->Graphe[a.dep].pds)+a.pds<(g->Graphe[a.arr].pds)) //Comparaison des poids
 				{
-					(g->Graphe[a.arr].pere)=&(g->Graphe[a.dep]);
-					(g->Graphe[a.arr].pds)=(g->Graphe[a.dep].pds)+a.pds;
+					(g->Graphe[a.arr].pere)=&(g->Graphe[a.dep]); //Mise a jour du pere pour récupération du chemin
+					(g->Graphe[a.arr].pds)=(g->Graphe[a.dep].pds)+a.pds; //Mise a jour du poids
 				}
 			}
 		}
@@ -56,7 +56,9 @@ main()
 	GRAPHE g;
 	SOMMET tab[8];
 	LARC chemin=creer_LARC();
-
+	
+	//Comme mon graphe marche pas, j'en fait un a la main ... Mais bellman marche pas non plus :'('	
+	
 	s0.ind=0;
 	s1.ind=1;
 	s2.ind=2;
